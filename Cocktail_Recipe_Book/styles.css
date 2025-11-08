@@ -1,0 +1,52 @@
+.para {
+    color: black;
+
+}
+
+.stuff {
+    display: flex;
+    align-items: center;
+}
+
+.blank img {
+    border-radius: 10px;
+    transition: transform 0.1s ease-in-out;
+    transform: scale(1);
+}
+
+.blank {
+    display: flex;
+    flex: 1;
+    color: black;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+}
+
+.blank img:hover {
+    transition: transform 0.15s ease-in-out;
+    transform: scale(1.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    border-radius: 10px;
+}
+
+* {
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(rgba(2, 2, 158, 0.5) 10%, rgba(25, 25, 112, 0.5) 55%, #311b9285);
+}

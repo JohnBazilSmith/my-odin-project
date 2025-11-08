@@ -1,0 +1,38 @@
+body {
+    background-image: linear-gradient(rgba(20, 20, 158, 0.5) 10%, rgba(25, 25, 112, 0.5) 55%, #311b9285, rgba(119, 0, 255, 0.5));
+}
+
+#title {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.content {
+    width: 80%;
+    display: block;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: lightgray;
+    margin: 10px;
+    padding: 5px;
+    text-align: justify;
+    text-align-last: center;
+    line-height: 1.5;
+}
+
+#menu {
+    background-color: rgba(211, 211, 211, 0.459);
+}
+
+img {
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
