@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>First Odin project lesson about javascript
+    </title>
+</head>
+<body>
+    <script>
+        /* console.log("Hello, World!!")
+        let name = "John";
+        let surname = "Doe";
+        console.log(name);
+        console.log(surname);
+        let age = 11;
+        console.log(age); // outputs 11 to the console
+        age = 54;
+        console.log(age); // what will be output now?
+        const pi = 3.14;
+        console.log(28+19);
+        console.log((4+6+9)/77);
+        let a = 10
+        console.log(a)
+        a = a + 2
+        console.log(a)
+        let b = a * 7
+        console.log(a+b) */
+        
+        /* const max = 57;
+        const actual = max - 13;
+        const percentage = actual / max;
+        console.log(percentage);
+ */
+        let x = 5;
+        x++;
+        console.log(x)
+
+        /* x = 100 + 50 * 3;
+        console.log(x);
+        x = (0.2 * 10 + 0.1 * 10) / 10;
+        console.log(x);
+        x = 10;
+        let y = 20;
+        let z = "30";
+        let result = x + y + z;
+        console.log(result);
+        x = 1000 / y;
+        console.log(isNaN(x)); */
+        console.log(x.toString(32));
+        x = `abcc`;
+        x = x.toUpperCase();
+        console.log(x);
+        console.log(x.codePointAt(0));
+        /* x = x.padStart(2,"this");
+        y = x.replace(/C/gi, "cdefg"); */
+        console.log(x);
+/*         console.log(y);
+ */
+        /* let login = prompt("enter username");
+        let pass;
+        if (login === "Admin") {
+            pass = prompt("enter password");
+            if (pass === "TheMaster") {
+                console.log("welcome");
+            } else if (pass === "" || pass === null) {
+                console.log("canceled");
+            } else {
+                console.log("wrong password");
+            }
+        } else if (login === "" || login === null) {
+            console.log("canceled");
+        } else {
+            console.log("i dont know you");
+        } */
+    </script>
+    <script>
+/*         function add7(num) {
+            return num + 7;
+        }
+        console.log(add7(parseInt(prompt("enter a number"), 10)));
+        const multiply = (a,b) => a * b;
+        console.log(multiply(2,6)); */
+
+        function capitalize(word) {
+            return word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase();
+        }
+        console.log(capitalize("AaBCdE"));
+
+        const lastLetter = phrase => phrase.at(-1);
+        console.log(lastLetter("AsMrWa"));
+    </script>
+</body>
+</html>
