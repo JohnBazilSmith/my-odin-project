@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Camelize:
+        const orgStr = ("ofek-iS-Gay-and-LiKeS-Ohad-hanavad");
+        function camelize (str) {
+            const arr = str.toLowerCase().split('-');
+            const capArr = [
+                arr[0], 
+                ...arr.slice(1).map(
+                s => s.charAt(0).toUpperCase() + s.slice(1)
+                )
+            ]
+            const newStr = capArr.join('');
+            return(newStr);
+        }
+
+        console.log(camelize(orgStr));
+        
+        //Filter range:
+        function filterRange(arr, a, b) {
+            return arr.filter(item => (item >= a && item <= b));
+        }
+        let array = [1,2,8,3,1,4,10,5,6,8,7,9];
+        console.log(filterRange(array, 3, 7));
+        console.log(array);
+        
+        //Filter range in place:
+        function filterRangeInPlace(arr, a, b) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > b || arr[i] < a) {
+                    arr.splice(i, 1);
+                    i--;
+                }
+            }
+            return arr;
+        }
+
+        filterRangeInPlace(array, 1, 9);
+        console.log(array);
+        
+        //Sort in decreasing order:
+        function sortDecreasing(arr) {
+            return arr.sort((a, b) => b - a);
+        }
+
+        console.log(sortDecreasing(array));
+
+        //Copy and sort array:
+        function copySorted(arr) {
+            let copiedArray = [...arr];
+            return copiedArray.sort((a, b) => {
+                return a.toLowerCase().localeCompare(b.toLowerCase());
+            });
+        }
+        let stringArray = ["hello", "is", "today", "is", "WedNesDay"];
+        console.log(stringArray);
+        let sorted = copySorted(stringArray);
+        console.log(sorted);
+        console.log(stringArray);
+
+        //Shuffle an array:
+        function shuffle(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+        console.log(shuffle(array));
+
+        let count = {
+            '123': 0,
+            '132': 0,
+            '213': 0,
+            '231': 0,
+            '321': 0,
+            '312': 0
+        };
+
+        for (let i = 0; i < 1000000; i++) {
+            let array1 = [1, 2, 3];
+            shuffle(array1);
+            count[array1.join('')]++;
+        }
+
+        // show counts of all possible permutations
+        for (let key in count) {
+            console.log(`${key}: ${count[key]}`);
+        }
+
+        //Filter unique array members:
+        function unique(arr) {
+            let result = [];
+            for (let str of arr) {
+                if (!result.includes(str)) {
+                    result.push(str);
+                }
+            }
+            return result;
+        }
+
+        console.log(unique(stringArray));
+
+        
+
+    </script>
+</body>
+</html>
