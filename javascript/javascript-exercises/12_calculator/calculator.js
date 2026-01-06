@@ -1,25 +1,40 @@
-const add = function() {
-	
+const add = function(a, b) {
+	if (Number.isFinite(a) && Number.isFinite(b)) return a + b;
+  else return "Error!";
 };
 
-const subtract = function() {
-	
+const subtract = function(a, b) {
+	if (Number.isFinite(a) && Number.isFinite(b)) return a - b;
+  else return "Error!";
 };
 
-const sum = function() {
-	
+const sum = function(arr) {
+	const result = arr.reduce((acc, val) => acc + val, 0);
+  return result;
 };
 
-const multiply = function() {
-
+const multiply = function(arr) {
+  const result = arr.reduce((acc, val) => acc * val, 0);
+  return result;
 };
 
-const power = function() {
-	
+const power = function(base, exponent) {
+  return Math.pow(base, exponent);
+
+  /*   let orgBase = base;
+  for (let i = 1; i < exponent; i++) {
+    base *= orgBase;
+  };
+  return base;
+  */
 };
 
-const factorial = function() {
-	
+const factorial = function(num) {
+  let result = 1;
+	for (let i = num; i > 1; i--) {
+    result *= i;
+  }
+  return result;
 };
 
 // Do not edit below this line
