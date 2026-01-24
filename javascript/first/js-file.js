@@ -32,11 +32,24 @@ document.body.append(p, h3, div);
 Array.from(div.children).forEach(e => e.style.color = "darkBlue");
 
 const btn = document.querySelector(".btn");
-btn.addEventListener("click", changeDivBackground);
-function changeDivBackground() {
+btn.addEventListener("mouseenter", changeDivBackground);
+btn.addEventListener("mouseleave", changeDivBackground);
+function changeDivBackground(e, smn) {
     if (div.style.backgroundColor === "rgb(211, 211, 211)") {
         div.style.backgroundColor = "pink";
     } else if (div.style.backgroundColor === "pink") {
     div.style.backgroundColor = "rgb(211, 211, 211)";
     } else return "error";
 }
+
+btn.addEventListener("click", e => e.target.style.color = "black");
+
+
+btn.addEventListener('click', function(event) {
+    console.log('The button was clicked!');
+    event.stopPropagation();
+});
+
+document.body.addEventListener('click',function(event) {
+    console.log('The body was clicked!');   
+});
