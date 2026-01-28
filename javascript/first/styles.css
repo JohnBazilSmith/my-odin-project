@@ -20,4 +20,29 @@ body {
   border: none;
   border-radius: 4px;
   text-decoration: none;
+  margin: 4px 10px;
+}
+
+.container-dark-theme {
+    background: linear-gradient(
+        to bottom,
+        rgb(46, 46, 46),
+        rgb(75, 75, 75) 75%,
+        gray
+    );
+    width: 100vh;
+    height: 100vh;
+    margin: 0;
+}
+
+.container-light-theme {
+    background: linear-gradient(
+        to bottom,
+        rgb(183, 206, 255),
+        rgb(151, 184, 255) 75%,
+        rgb(102, 102, 102)
+    );
+    width: 100vh;
+    height: 100vh;
+    margin: 0;
 }
