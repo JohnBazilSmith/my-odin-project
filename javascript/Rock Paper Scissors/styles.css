@@ -1,3 +1,8 @@
+:root {
+    --darkblue: #1F2937;
+    --lightfont: #f9faf8;
+}
+
 body {
     background: linear-gradient(
         to bottom,
@@ -5,7 +10,27 @@ body {
         rgb(75, 75, 75) 75%,
         gray
     );
-    width: 100vh;
-    height: 100vh;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.game-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: gray;
+    width: 55%;
+    margin-top: 64px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.score {
+    background-color: var(--darkblue);
+    color: var(--lightfont);
 }

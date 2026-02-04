@@ -5,10 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
+    <script src="gamecode.js" defer></script>
 </head>
 <body>
-    <script src="gamecode.js">
-    </script>
-    
+    <div class="game-container">
+        <p class="title" id="main-title">
+            Let's Play!
+        </p>
+        <div class="scoreboard">
+            <p class="sub-title">
+                The current score:
+            </p>
+            <div class="score-container">
+                <p id="human-score" class="score">
+                    Human:
+                </p>
+                <p id="computer-score" class="score">
+                    Computer:
+                </p>
+            </div>
+        </div>
+        <div class="result-container">
+            <p class="picks">
+                <span class="human-pick">1</span>
+                beats 
+                <span class="computer-pick">2</span>
+            </p>
+            <p class="result">Human wins this round!</p>
+        </div>
+        <div class="game-btn">
+            <button class="btn rock-btn">Rock</button>
+            <button class="btn paper-btn">Paper</button>
+            <button class="btn scissors-btn">Scissors</button>
+        </div>
+        <div class="func-container">
+            <button class="btn reset-btn">Reset game</button>
+            <button class="btn change-theme-btn">Change theme</button>
+        </div>
+        <div class="footer">
+            Made by me!
+        </div>
+    </div>
 </body>
 </html>
