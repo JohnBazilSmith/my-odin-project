@@ -7,8 +7,7 @@ let rematch = "yes";
 let pointsToWin = 5;
 
 function chooseRandom() {
-    randomNumber = Math.floor(Math.random() * 3);
-    console.log(randomNumber);
+    randomNumber = Math.floor(Math.random() * 3);;
     if (randomNumber === 0) {
         computerChoice = "rock";
     } else if (randomNumber === 1) {
@@ -19,52 +18,66 @@ function chooseRandom() {
 } 
 /* This function outputs a randomly chosen option out of the three */
 
-function getPlayerChoice() {
-    playerChoice = prompt("Choose your weapon -->").toLowerCase();
-    while (playerChoice !== "rock" && playerChoice !== "paper" && playerChoice !== "scissors") {
-        playerChoice = prompt("Invalid option. Please try again!").toLowerCase();
-        console.log(playerChoice);
-    }
-    
-} 
+
+const rockBtn = document.querySelector(".rock-btn");
+const paperBtn = document.querySelector(".paper-btn");
+const scissorsBtn = document.querySelector(".scissors-btn");
+
+rockBtn.addEventListener("click",() => (getPlayerChoice("rock")))
+paperBtn.addEventListener("click", () => (getPlayerChoice("paper")))
+scissorsBtn.addEventListener("click", () => (getPlayerChoice("scissors")))
+
+
+function getPlayerChoice(choice) {
+    playerChoice = choice;
+}
+ 
 /* This function gets an input from the player and makes it lowercase.
 It makes sure the input is valid (i.e one of the three options), 
 and if not, it prompts the player to send another choice */
 
+const humanScoreElement = document.querySelector("#human-score");
+const computerScoreElement = document.querySelector("#computer-score");
+
 function showScore() {
-    console.log(" ");
-    console.log("Scoreboard:");
-    console.log("Player: " + playerScore + " | Computer: " + computerScore);
-    console.log(" ");
+    humanScoreElement.textContent = (playerScore);
+    computerScoreElement.textContent = (computerScore);
 } 
 /* This function shows the score of the player vs the score of the 
 computer, And styles them with line breaks and wording */
 
-function showChoices() {
+const choices = document.querySelector(".picks")
+const result = document.querySelector(".result");
+choices.textContent = ("");
+result.textContent = ("");
+
+function showChoices(winningChoice, losingChoice, winner) {
+    choices.textContent = (`${winningChoice} beats ${losingChoice}`)
+    result.textContent = (`${winner} wins this round!`);
+}
+
+/* function showChoices() {
     console.log(playerChoice + " VS " + computerChoice);
     console.log(" ");
-}
+} */
 /* This function shows the choice made by the player vs the computer */
 
 function compareChoices() {
     if (computerChoice === playerChoice) {
-        showChoices();
-        console.log("It's a tie!");
-        showScore();
+        choices.textContent = `Both picked ${playerChoice}`;
+        result.textContent = "It's a tie!";
     } else if (computerChoice === "rock" && playerChoice === "scissors"
     || computerChoice === "paper" && playerChoice === "rock" 
     || computerChoice === "scissors" && playerChoice === "paper") {
-        showChoices();
-        console.log(computerChoice + " beats " + playerChoice + " | Point to Computer!");
         computerScore ++;
         showScore();
+        showChoices(computerChoice, playerChoice, "Computer");
     } else {
-        showChoices();
-        console.log(playerChoice + " beats " + computerChoice + " | Point to Player!");
         playerScore ++;
         showScore();
-    }
-}
+        showChoices(playerChoice, computerChoice, "Human");
+    };
+};
 /* This function conducts the main logic of the game.
 It compares computerChoice with playerChoice and returns an output
 relevant to who won the round (or shows a tie) and adds 1 to their
@@ -73,11 +86,9 @@ It also uses showScore and showChoices to show what each player picked,
 and whats the current - post round, scoreboard */
 
 function playRound() {
-    console.log("Are you ready?");
     chooseRandom();
     getPlayerChoice();
     compareChoices();
-    console.log(" ========================== ");
 }
 /* This function dictates the course of action for a single round.
 It essentialy gets each one to choose an option and uses the compare
@@ -88,11 +99,11 @@ function playGame() {
     while (playerScore < pointsToWin && computerScore < pointsToWin) {
             playRound();
         }
-    console.log("Game Over!");
+    choices.textContent = ("Game Over!");
     if (playerScore >= pointsToWin) {
-        console.log("Player wins the game!");
+        result.textContent = ("Player wins the game!");
     } else { 
-        console.log("Computer wins the game!");
+        result.textContent = ("Computer wins the game!");
     }
     rematch = prompt("Ready for a rematch?").toLowerCase();
 }
@@ -103,7 +114,7 @@ it than desplays an appropriate winning message and
 prompts the player asking for a remach */
 
 
-console.log("Welcome to Rock Paper Scissors!");
+alert("Welcome to Rock Paper Scissors!");
 
 while (rematch === "yes") {
     computerScore = 0;
@@ -112,7 +123,7 @@ while (rematch === "yes") {
     playGame();
 }
 
-console.log("See you next time!");
+alert("See you next time!");
 
 /* Lastly, this is the code for the actual game. 
 It loops as long as the player wants a match (rematch === 'yes').
